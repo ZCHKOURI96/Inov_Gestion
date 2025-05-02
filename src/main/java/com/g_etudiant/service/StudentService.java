@@ -30,5 +30,11 @@ public class StudentService {
         studentRepository.deleteById(id);
         return studentRepository.existsById(id);
     }
+    public List<Student> getStudentByName(String name) {
+        return studentRepository.findByNameContainingIgnoreCase(name);
+    }
+    public List<Student> getStudentByVille(String ville) {
+        return studentRepository.findByVille(ville);
+    }
 
 }

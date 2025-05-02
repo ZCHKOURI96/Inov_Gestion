@@ -14,7 +14,9 @@ import lombok.NoArgsConstructor;
 @Data
 public class Student {
     @Id
+            @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
     int age;
+    String ville;
 }

@@ -4,7 +4,6 @@ import com.g_etudiant.entities.Student;
 import com.g_etudiant.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -20,7 +19,7 @@ public class StudentController {
     public List<Student> getAllStudent() {
         return studentService.getAllStudent();
     }
-    @GetMapping("student/{id}")
+    @GetMapping("student/id/{id}")
     public Student getStudentById(@PathVariable Long id) {
         return studentService.getStudentById(id);
     }
@@ -33,5 +32,14 @@ public class StudentController {
     public boolean deleteStudentById(@PathVariable Long id) {
         return studentService.deleteStudentById(id);
 
+    }
+    @GetMapping("student/name/{name}")
+    public List<Student> getStudentByName(@PathVariable String name) {
+
+        return  studentService.getStudentByName(name);
+    }
+    @GetMapping("student/ville/{ville}")
+    public List<Student> getStudentByVille(@PathVariable String ville) {
+        return studentService.getStudentByVille(ville);
     }
 }
